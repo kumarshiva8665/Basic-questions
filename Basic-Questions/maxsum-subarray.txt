@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int maxsumsubarray(int a[], int n)
+{
+    int maxsum=0;
+    int cursum=0;
+    for(int i=0;i<n;i++)
+    {
+        cursum=cursum + a[i];
+
+        if(cursum > maxsum)
+        {
+            maxsum=cursum;
+        }
+
+        if(cursum<0)
+        {
+            cursum=0;
+        }
+    }
+    return maxsum;
+}
+
+int main() {
+    int i,n;
+    cin>>n;
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+
+   cout<<maxsumsubarray(a, n);
+    
+}

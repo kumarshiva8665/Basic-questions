@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n,i;
+    cin>>n;
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+
+    int minsofar=a[0];
+    int maxprofit= 0;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]<minsofar)
+        {
+            minsofar=a[i];
+        }
+
+        int diff=a[i] - minsofar;
+        if(diff>maxprofit)
+        {
+            maxprofit=diff;
+        }
+    }
+
+    cout<<maxprofit;
+}
+
+
+
+
+
